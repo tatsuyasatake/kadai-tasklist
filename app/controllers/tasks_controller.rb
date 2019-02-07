@@ -48,15 +48,15 @@ class TasksController < ApplicationController
     redirect_to tasks_url
   end
   
-  def task_params
-    params.require(:task).permit(:content, :title)
-  end
-  
    private
    
   def set_task
    set_task
    
+  end
+  
+  def task_params
+    params.require(:task).permit(:status)
   end
 
 
