@@ -8,10 +8,6 @@
       </ul>
     </div>
   <% end %>
-  
-  <% flash.each do |task_type, task| %>
-    <div class="alert alert-<%= task_type %>"><%= task %></div>
-  <% end %>
 
   <%= f.label :content, 'タスク' %>
   <%= f.text_field :content %>
