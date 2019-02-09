@@ -1,10 +1,8 @@
 <%= form_for(task) do |f| %>
-    <% if task.errors.any? %>
+　<% if task.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
-
       <ul>
-        <% task.errors.full_tasks.each do |task| %>
+        <% task.errors.full_messages.each do |task| %>
           <li><%= task %></li>
         <% end %>
       </ul>
@@ -12,8 +10,11 @@
   <% end %>
 
   
-  <%= f.label :status, 'タスク' %>
+  <%= f.label :status, 'ステータス' %>
   <%= f.text_field :status %>
+  
+   <%= f.label :content, '内容' %>
+  <%= f.text_field :content %>
 
   <%= f.submit '投稿' %>
 <% end %>
