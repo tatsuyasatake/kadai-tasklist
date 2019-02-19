@@ -5,23 +5,18 @@
     <thead>
       <tr>
         <th>id</th>
-        <th>タイトル</th>
-        <th>メッセージ</th>
+        <th>ステータス</th>
+        <th>タスク</th>
       </tr>
     </thead>
     <tbody>
       <% @tasks.each do |task| %>
-        <tr>
-          <td><%= link_to task.id, task %></td>
-          <td><%= task.status %></td>
-          <td><%= task.content %></td>
-        </tr>
+       <li><%= link_to task.id, task %> : <%= task.status %> &gt; <%= task.content %></li>
       <% end %>
     </tbody>
-  </table>
+    </table>
   <div>
-    <%= paginate @tasks %>
+   <%= paginate @tasks %>
   </div>
 <% end %>
-
 <%= link_to '新規タスクの投稿', new_task_path, class: "btn btn-primary" %>
